@@ -1,0 +1,33 @@
+Options +FollowSymLinks -MultiViews -Indexes
+RewriteEngine On
+#RewriteBase /
+
+#If the file does not exist, and the url doesn't start with /images
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_URI} !^/images
+RewriteRule ^login/?$ signin.php [NC,L]
+RewriteRule ^forgot_password/?$ request_password_reset.php [NC,L]
+RewriteRule ^email_confirmation/?$ email_verification.php [NC,L]
+RewriteRule ^404_not_found/?$ 404.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+#RewriteRule ^(.+)$ index.php?page=$1 [QSA,L]
+#RewriteRule ^([a-zA-Z0-9-+]+)/?$ cms.php?page=$1 [L,QSA]
+
+#If the rule above didn't match, and the file does not exist, use the ErrorDocument
+ErrorDocument 404 https://hris.medcaremso.com/404_not_found
+
+#ErrorDocument 500 http://example.com/500/
+# or map them to one error document:
+# ErrorDocument 404 /pages/errors/error_redirect.php
+# ErrorDocument 500 /pages/errors/error_redirect.php
+#RewriteCond %{REQUEST_URI} ^/404_not_found/$
+#RewriteRule ^(.*)$ /404.php [L]
+#RewriteCond %{REQUEST_URI} ^/500/$
+#RewriteRule ^(.*)$ /pages/errors/500.php [L]
+# or map them to one error document:
+#RewriteCond %{REQUEST_URI} ^/404/$ [OR]
+#RewriteCond %{REQUEST_URI} ^/500/$
+#RewriteRule ^(.*)$ /pages/errors/error_redirect.php [L]

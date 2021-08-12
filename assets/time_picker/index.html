@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TimePicker</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/time_picker_style.css" rel="stylesheet">
+    <link href="css/timepicki.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+          crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>* From:</label>
+
+                <input
+                        type="text"
+                        tabindex="20"
+                        class="form-control timepicker"
+                        maxlength="8"
+                        id="time_from"
+                        placeholder="From (Time)">
+
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>* To:</label>
+                <div class="input-group">
+                    <input
+                            type="text"
+                            tabindex="30"
+                            class="form-control timepicker"
+                            maxlength="8"
+                            id="time_to"
+                            placeholder="To (Time)">
+                    <div class="input-group-append">
+                                                                            <span class="input-group-text">
+                                                                                <i class="fa fa-book"></i>
+                                                                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <button class="btn btn-success btn-md" type="button" onclick="saveFORM()">Check</button>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/timepicki.js"></script>
+<script> $('.timepicker').timepicki(); </script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+    function saveFORM() {
+
+        var time_from = document.getElementById('time_from');
+        var time_to = document.getElementById('time_to');
+        var checkValidTime = /^(((0[1-9])|(1[0-2])):([0-5])([0-9])\s(A|P)M)?$/;
+        //var checkValidTime = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/;
+
+        if (time_from.value == '') {
+            console.log('"From Time" field is required.');
+            return false;
+        } else if (!checkValidTime.test(time_from.value) || time_from.value.length > 8) {
+            console.log('Please select a valid "From Time".');
+            return false;
+        } else if (time_to.value == '') {
+            console.log('"To Time" field is required.');
+            return false;
+        } else if (!checkValidTime.test(time_to.value) || time_to.value.length > 8) {
+            console.log('Please select a valid "To Time".');
+            return false;
+        } else {
+            console.log('Good Job');
+            return false;
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

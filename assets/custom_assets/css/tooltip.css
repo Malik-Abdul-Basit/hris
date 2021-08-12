@@ -1,0 +1,124 @@
+.Tool-Tip {
+    display: inline-block;
+    position: relative;
+}
+.Tool-Tip .Tool-Tip-Text {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    bottom: 125%;
+    font-size: 12px;
+    left: 50%;
+    margin-left: -50px;
+    min-width: 100px;
+    opacity: 0;
+    padding: 5px 7px;
+    position: absolute;
+    text-align: center;
+    transition: opacity 0.3s;
+    visibility: hidden;
+    z-index: 300;
+}
+.Tool-Tip .Tool-Tip-Text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.Tool-Tip .Tool-Tip-Text.Tool-White {
+    background-color: #fff !important;
+    border-color: #dddddd;
+    box-shadow: 0 0 10px #c9c9c9;
+    color: #7E8299 !important;
+}
+.Tool-Tip .Tool-Tip-Text.Tool-White::after {
+    border-color: #d0d0d0 transparent transparent transparent !important;
+}
+
+.Tool-Tip .Tool-Tip-Text.Tool-Primary {
+    background-color: #3699FF;
+    border-color: #3699FF;
+    box-shadow: 0 0 10px #3699FF;
+    color: #FFFFFF;
+}
+.Tool-Tip .Tool-Tip-Text.Tool-Primary::after {
+    border-color: #3699FF transparent transparent transparent !important;
+}
+
+.Tool-Tip .Tool-Tip-Text.Tool-LightPrimary {
+    background-color: #E1F0FF;
+    border-color: transparent;
+    box-shadow: 0 0 10px #E1F0FF;
+    color: #3699FF;
+}
+.Tool-Tip .Tool-Tip-Text.Tool-LightPrimary::after {
+    border-color: #E1F0FF transparent transparent transparent !important;
+}
+
+.Tool-Tip .Tool-Tip-Text.Tool-Success {
+    background-color: #1BC5BD;
+    border-color: #1BC5BD;
+    box-shadow: 0 0 10px #1BC5BD;
+    color: #FFFFFF;
+}
+.Tool-Tip .Tool-Tip-Text.Tool-Success::after {
+    border-color: #1BC5BD transparent transparent transparent !important;
+}
+
+.Tool-Tip .Tool-Tip-Text.Tool-Danger {
+    background-color: #F64E60;
+    border-color: #F64E60;
+    box-shadow: 0 0 10px #F64E60;
+    color: #FFFFFF;
+}
+.Tool-Tip .Tool-Tip-Text.Tool-Danger::after {
+    border-color: #F64E60 transparent transparent transparent !important;
+}
+
+.Tool-Tip .Tool-Tip-Text.Tool-Warning {
+    background-color: #FFA800;
+    border-color: #FFA800;
+    box-shadow: 0 0 10px #FFA800;
+    color: #FFFFFF;
+}
+.Tool-Tip .Tool-Tip-Text.Tool-Warning::after {
+    border-color: #FFA800 transparent transparent transparent !important;
+}
+
+.Tool-Tip .Tool-Tip-Text.Tool-Purple {
+    background-color: #8950FC;
+    border-color: #8950FC;
+    box-shadow: 0 0 10px #8950FC;
+    color: #FFFFFF;
+}
+.Tool-Tip .Tool-Tip-Text.Tool-Purple::after {
+    border-color: #8950FC transparent transparent transparent !important;
+}
+
+.Tool-Tip .Tool-Tip-Text.Tool-Info {
+    background-color: #5bc0de;
+    border-color: #5bc0de;
+    box-shadow: 0 0 10px #5bc0de;
+    color: #FFFFFF;
+}
+.Tool-Tip .Tool-Tip-Text.Tool-Info::after {
+    border-color: #5bc0de transparent transparent transparent !important;
+}
+
+.Tool-Tip .Tool-Tip-Text.Tool-Secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    box-shadow: 0 0 10px #6c757d;
+    color: #FFFFFF;
+}
+.Tool-Tip .Tool-Tip-Text.Tool-Secondary::after {
+    border-color: #6c757d transparent transparent transparent !important;
+}
+
+.Tool-Tip:hover .Tool-Tip-Text {
+    visibility: visible;
+    opacity: 1;
+}

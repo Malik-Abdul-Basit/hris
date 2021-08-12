@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".add").on("click", function () {
+                var v = $(this).closest("div.content").find("input.DMY_dateOnly").val();
+                alert(v);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="content">
+    <div class="ranking">
+        <label>Rank:</label>
+        <input type="text" name="rank" class="DMY_dateOnly" value="1"/>
+    </div>
+    <div class="buttons">
+        <a href="#" class="add">Click</a>
+    </div>
+</div>
+</body>
+</html>

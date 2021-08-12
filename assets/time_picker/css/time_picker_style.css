@@ -1,0 +1,18 @@
+.form-group .time_pick,
+.form-group .time_pick input[type='text'].timepicker {
+    width: 100% !important;
+    display: inline-block !important;
+}
+
+.form-group .input-group .input-group-append {
+    width: 45px !important;
+}
+
+.form-group .input-group .time_pick {
+    width: calc(100% - 45px) !important;
+}
+
+.form-group .input-group .time_pick input[type='text'].timepicker {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
